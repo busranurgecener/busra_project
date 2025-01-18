@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yüksek Lisans Başvuru Formu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 500px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group select {
+            cursor: pointer;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+        }
+        .form-group .radio-label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .form-button {
+            text-align: center;
+        }
+        .form-button button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-button button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Yüksek Lisans Başvuru Formu</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="fullName">İsim Soyisim:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Adınızı ve soyadınızı giriniz." required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-posta Adresi:</label>
+            <input type="email" id="email" name="email" placeholder = "E - posta adrenizi giriniz." required>
+        </div>
+        <div class="form-group">
+                <label for="phone">Telefon Numarası:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Telefon numaranızı (5xx) formatında giriniz." required>
+        </div>
+        <div class="form-group">
+            <label>Cinsiyet:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male" class="radio-label">Erkek</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" class="radio-label">Kadın</label>
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Doğum Tarihi:</label>
+            <input type="date" id="birthDate" name="birthDate" required>
+        </div>
+        <div class="form-group">
+            <label for="country">Ülke:</label>
+            <select id="country" name="country" required>
+                <option value="turkey">Türkiye</option>
+                <option value="usa">ABD</option>
+                <option value="germany">Almanya</option>
+                <option value="france">Fransa</option>
+                <option value="uk">İngiltere</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="university">Üniversite:</label>
+            <input type="text" id="university" name="university" placeholder = "Mezun olduğunuz üniversiteyi yazınız." required>
+        </div>
+        <div class="form-group">
+            <label for="institute">Enstitü:</label>
+            <input type="text" id="institute" name="institute" placeholder = "Lisansüstü eğitiminizi görmek istediğiniz enstitüyü yazınız." required>
+        </div>    
+        <div class="form-group">
+            <label for="transcript">Transkript (PDF veya JPG formatında):</label>
+            <input type="file" id="transcript" name="transcript" accept=".pdf, .jpg, .jpeg" required>
+        </div>    
+        <div class="form-group">
+            <label for="graduationcertificate">Mezuniyet Belgesi (PDF veya JPG formatında):</label>
+            <input type="file" id="graduationcertificate" name="graduationcertificate" accept=".pdf, .jpg, .jpeg" required>
+        </div> 
+        <div class="form-group">
+            <label for="exam">Sınav Türü:</label>
+            <select id="exam" name="exam" placeholder = "Girmiş olduğunuz yabancı dil sınavını seçiniz." required>
+                <option value="YDS">YDS</option>
+                <option value="YÖKDİL">YÖKDİL</option>
+                <option value="TOEFL">TOEFL</option>
+            </select>
+        </div>    
+        <div class="form-group">
+                <label for="examcertificate">Yabancı Dil Sınav Bilgisi (PDF veya JPG formatında):</label>
+                <input type="file" id="examcertificate" name="examcertificate" accept=".pdf, .jpg, .jpeg" required>
+        </div> 
+        <div class="form-group">
+            <label for="subject">Konu:</label>
+            <select id="subject" name="subject" required>
+                <option value="application">Başvuru</option>
+                <option value="question">Soru</option>
+                <option value="feedback">Geri Bildirim</option>
+                <option value="other">Diğer</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Mesaj:</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Mesajınızı buraya yazınız..."></textarea>
+        </div>
+        
+        <div class="form-button">
+            <button type="submit">Başvuruyu Gönder</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+
